@@ -15,12 +15,10 @@
    <div class="container">
       <div class="row">
          <div class="col-lg-6 col-md-6 col-sm-12 widget">
-            <h1>About Company</h1>
-               <p>Mozita group has been a trusted Christchurch business, providing 
-                  excellent services and competitive prices. We pride ourselves in our range of recruitment services, 
-                  automotive service & repairs, Collision repair & paint, hybrid vehicle repairs and have long served our community with trustworthy and high-quality work.
+            <h1><?php the_field('footer_block_01_title','option');?></h1>
+               <p><?php the_field('footer_block_01_description','option');?>
                </p>
-               <a href="contact.html" id="map"><button class="footer_btn btn">View Map<i class="fa fa-map-marker"></i></button></a>
+               <a href="<?php echo get_home_url(); ?>/contact-us" id="map"><button class="footer_btn btn">View Map<i class="fa fa-map-marker"></i></button></a>
             </div>
          <!--div class="col-lg-4 col-md-4 col-sm-12 widget">
             <h1>Recent Posts</h1>
@@ -28,10 +26,10 @@
                reintermediate unique value with client-centric interfaces. Holisticly repurposee.</p>
          </div-->
          <div class="col-lg-6 col-md-6 col-sm-12 widget">
-            <h1>Connect with Us</h1>               
-               <li><a href="#"><i class="fa fa-envelope-o"></i>  &nbsp support@wheel.com</a></li>
-               <li><a href="#"><i class="fa fa-map-o"></i>  &nbsp 101 Springs Rd, Hornby, Christchurch 8042.</a></li>
-               <li><a href="#"><i class="fa fa-phone"></i>  &nbsp 0800 820 820</a></li>
+            <h1><?php the_field('footer_block_02_title','option');?></h1>               
+               <li><a href="#"><i class="fa fa-envelope-o"></i>  &nbsp <?php the_field('company_email','option');?></a></li>
+               <li><a href="#"><i class="fa fa-map-o"></i>  &nbsp <?php the_field('company_address','option');?></a></li>
+               <li><a href="#"><i class="fa fa-phone"></i>  &nbsp <?php the_field('comapany_telephone','option');?></a></li>
          </div>
       </div>
    </div>

@@ -183,3 +183,40 @@ function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+}
+
+if( function_exists('acf_add_options_sub_page') )
+{
+    	acf_add_options_sub_page( 'Common CMS' );
+  	
+}
+
+function get_the_frontpage_excerpt($count){
+    $permalink = get_permalink($post->ID);
+    $excerpt = get_the_content();
+    $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, $count);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt.'...<br><br><a href="'.get_permalink($post->ID).'">Read more <i class="fa fa-angle-right"></i></a>';
+    return $excerpt;
+}
+
+function get_the_servicepage_excerpt($count){
+    $permalink = get_permalink($post->ID);
+    $excerpt = get_the_content();
+    $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, $count);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt;
+    return $excerpt;
+}

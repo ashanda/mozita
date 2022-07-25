@@ -644,7 +644,7 @@ about {
 }
 
 about img {
-    width: -webkit-fill-available;
+    width: 300px;
 }
 
 about .about_text {
@@ -704,8 +704,17 @@ about .about_text .about_btn:hover {
     about {
         display: inline-block;
     }
+}
+
+@media (max-width: 500px) {
     about img {
-        width: auto;
+        width: 350px;
+    }
+}
+
+@media (max-width: 350px) {
+    about img {
+        width: 300px;
     }
 }
 
@@ -810,7 +819,7 @@ services p {
 .cell .service-overlay span {
     font-size: 26px;
     font-weight: 900;
-    padding-bottom: 240px;
+    padding-bottom: 250px;
     color: #fff;
     opacity: 1;
 }
@@ -823,7 +832,7 @@ services p {
     border: 1px solid transparent;
     border-radius: 20px;
     padding: 10px;
-    margin-top: 280px;
+    margin-top: 300px;
 }
 
 .cell .services_btn i {
@@ -871,13 +880,13 @@ services p {
     .cell .service-overlay span {
         font-size: 18px;
         font-weight: 700;
-        padding-bottom: 150px;
+        padding-bottom: 200px;
         opacity: 1;
     }
     .cell .services_btn {
         font-size: 12px;
         padding: 8px;
-        margin-top: 200px;
+        margin-top: 250px;
     }
 }
 
@@ -998,7 +1007,7 @@ testimonals .col-lg-12 p {
         line-height: 40px;
     }
     testimonals .testimonals {
-        padding-top: 500px;
+        padding-top: 100px;
     }
 }
 
@@ -1341,6 +1350,8 @@ blog .blog-text p i {
 footer {
     background-image: url(./resources/images/footer\ bg.jpg);
     color: #fff;
+    position: absolute;
+    width: 100%;
 }
 
 footer .widget h1 {
@@ -1780,6 +1791,7 @@ product_cards form .col-12 {
     font-size: 20px;
     height: 110px;
     font-weight: 500;
+    width: 80%
 }
 
 product_cards form .col-12 label {

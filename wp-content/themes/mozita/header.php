@@ -62,18 +62,22 @@
         <div class="row">
            <div  class="col-md-8">
               <ul class="social_icon_res">
-                <li><a href="#"><i class="fa fa-envelope-o"></i>  &nbsp support@wheel.com</a></li>
-                <li><a href="#"><i class="fa fa-map-o"></i>  &nbsp 101 Springs Rd, Hornby, Christchurch 8042.</a></li>
-                <li><a href="#"><i class="fa fa-clock-o"></i> &nbsp Mon - Sat: 8:00 am - 6:30 pm</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i>  &nbsp <?php the_field('company_email','option');?></a></li>
+                <li><a href="#"><i class="fa fa-map-o"></i>  &nbsp <?php the_field('company_address','option');?></a></li>
+                <li><a href="#"><i class="fa fa-clock-o"></i> &nbsp <?php the_field('avaliblity','option');?></a></li>
               </ul>
            </div>
            <div  class="col-md-4">
             <ul class="email_call_res">
                <!--li> <i class="fa fa-search"></i>&nbsp&nbsp<input type="text" placeholder="Search.."> </li> 
                <li> &nbsp&nbsp | &nbsp&nbsp </li--->
-               <li><a href="#"><i class="fa fa-facebook-f"></i> </a></li>
-               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-               <!--li><a href="#"><i class="fa fa-twitter"></i></a></li-->
+               <?php if( have_rows('social_media','option') ): ?>
+               
+               <?php while( have_rows('social_media','option') ): the_row();?>
+                 
+                  <li><a href="<?php the_sub_field('link'); ?>"><i class="<?php the_sub_field('icon'); ?>"></i> </a></li> 
+               <?php endwhile; ?>
+            <?php endif; ?>
             </ul>
          </div>
         </div>
@@ -91,7 +95,7 @@
                        <div class="full">
                           <div class="center-desk">
                              <div class="logo">
-                                <a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/resources/images/logo (2).png" alt="#" width="110px" /> </a>
+                                <a href="index.html"><img src="<?php the_field('company_logo','option');?>" alt="#" width="110px" /> </a>
                              </div>
                           </div>
                        </div>
@@ -125,7 +129,7 @@
                         <ul>
                            <!---li><button class="head_icon_btn"><i class="fa fa-heart icons"></i></button></li>
                            <li><button class="head_icon_btn"><i class="fa fa-cart-arrow-down icons"></i></button></li-->
-                           <li> <a href="contact.html"><button class="head_services_btn" href="contact.html"> Request Quote<i class="fa fa-angle-right"></i></button></a></li>
+                           <li> <a href="<?php echo get_home_url(); ?>/contact-us"><button class="head_services_btn" href="contact.html"> Request Quote<i class="fa fa-angle-right"></i></button></a></li>
                         </ul>
                      </div>
                   </div>
